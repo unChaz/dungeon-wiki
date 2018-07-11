@@ -1,0 +1,37 @@
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+
+@import "fonts";
+@import "colors";
+@import "buttons";
+@import "layout";
+
+@import "components/home";
+@import "components/site_header";
+@import "components/info_cards";
+
+@import "wiki.scss";
+
+.content {
+  max-width: 1440px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: auto;
+}
+
+.wiki-enter-btn {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  font-size: 22px;
+  font-family: 'Crete Round';
+}
+
+.splash-page {
+  background-image: url("<%= asset_path('splash-screen.png') %>");
+  min-height: calc(100vw * 0.56 + 80px);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  margin-top: -35px;
+  background-color: $background-color;
+}

@@ -1,0 +1,28 @@
+body {
+  background-color: $layout-background;
+  font-family: $primary-font;
+}
+
+.container {
+  max-width: 1440px;
+  margin: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-family: $primary-font;
+  color: $primary-font-color;
+}
+
+.off-color-section {
+  background-color: $off-color-section-bg;
+  color: $off-color-section-font;
+}
+
+.page-header {
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+}
+
+.content-row {
+  width: 100%;
+}

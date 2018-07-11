@@ -1,0 +1,13 @@
+.btn-orange,
+.btn-orange.dropdown-toggle,
+.open > .btn-orange.dropdown-toggle {
+  color: $white;
+  background-color: $orange;
+  border-color: darken($orange, 5%);
+
+  &:hover, &:focus, &:active, &.active {
+    color: $white;
+    background-color: darken($orange, 10%);
+    border-color: darken($orange, 15%);
+  }
+}

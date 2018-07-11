@@ -1,0 +1,92 @@
+.wiki_page_info {
+  font-style: italic;
+  color: #666;
+  margin-left: 5px;
+  float: left;
+}
+
+.wiki_page_actions {
+  text-align: right;
+  width: 100%;
+  padding: 0px;
+  @media(max-width: 600px) {
+    margin-top: 40px;
+    text-align: center;
+
+    a {
+      margin: 0 !important;
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+  height:auto;
+}
+
+.wiki_page_actions li {
+  display: inline;
+  a {
+    padding: 7px 14px;
+    border: 1px solid white;
+    background-color: #337ab7;
+    border-radius: 4px;
+    margin: 5px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+
+    &:hover, &:focus, &:active, &.active {
+      color: white;
+      text-decoration: none;
+      background-color: darken(#337ab7, 10%);
+      border-color: darken(#337ab7, 15%);
+    }
+  }
+}
+
+.wiki_content,
+.wiki_diff,
+.wiki_history {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.wiki_history {
+  width: 100%;
+}
+
+.wiki_history_header td {
+  border-bottom: 2px dashed black;
+}
+
+.wiki_form {
+  display: block;
+  width: 100%;
+}
+
+.wiki_form p {
+  padding: 10px;
+}
+
+.wiki_form p input,
+.wiki_form p textarea {
+  width: 100%;
+}
+
+.wiki_form .submit {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.wiki_diff span.added {
+  background: #D4FFAB;
+  color: #509A05;
+}
+
+.wiki_diff span.removed {
+  background: #FFD8D8;
+  color: #EF2828;
+}

@@ -1,0 +1,64 @@
+.title-text {
+  margin-top: 10px;
+}
+
+.site-header {
+  display: block;
+  background-color: $background-color;
+  color: white;
+  border-bottom: 3px solid $subtle-grey;
+  height: 80px;
+  margin-bottom: 30px;
+  text-align: left;
+
+  .banner-container {
+    width: 100%;
+    height: 80px;
+    padding-left: 50px;
+    padding-top: 10px;
+
+    h1 {
+      @media(max-width: 600px) {
+        font-size: 22px;
+      }
+    }
+  }
+
+  .fa {
+    padding: 12px;
+    font-size: 28px;
+    line-height: 26px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+
+  .fa-youtube {
+    background: #DD272D;
+    color: white;
+  }
+
+  .fa-twitch {
+    background: #6441A4;
+    color: white;
+  }
+
+  .fa-twitch {
+    background: #6441A4;
+    color: white;
+  }
+
+  /* Twitter */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+}

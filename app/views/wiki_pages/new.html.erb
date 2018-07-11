@@ -1,0 +1,28 @@
+<div class="content">
+  <h1><%=wt 'Creating a new wiki page' %></h1>
+
+  <%= wiki_page_form do |f| %>
+    <%= f.hidden_field :previous_version_number, :value => f.object.last_version_number %>
+
+    <p><%=wt 'Title:' %><br /><%= f.text_field :title %></p>
+    <%= f.cktext_area(:content, cols: 40, ckeditor: {
+      toolbar: 'mini',
+      font_names:
+        'Indie Flower/Indie Flower, Courier New;' +
+        'Cinzel/Cinzel, Helvetica;' +
+        'Crete/Crete Round, Helvetica;' +
+        'Arial/Arial, Helvetica, sans-serif;' +
+        'Courier New/Courier New, Helvetica, sans-serif;' +
+        'Georgia/Georgia, Helvetica, sans-serif;' +
+        'Lucida Sans Unicode/Lucida Sans Unicode, Helvetica, sans-serif;' +
+        'Tahoma/Tahoma, Helvetica, sans-serif;' +
+        'Times New Roman/Times New Roman, Times, serif;' +
+        'Trebuchet MS/Trebuchet MS, Helvetica, sans-serif;' +
+        'Verdana;'
+      }) %>
+    <%= f.hidden_field :comment, :value => 'First Revision'%>
+    <%= hidden_field_tag :path, @page.path %>
+
+    <input type="submit" value="<%=wt 'Create page' %>" class="submit" />
+  <% end %>
+</div>
