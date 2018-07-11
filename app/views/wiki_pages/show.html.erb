@@ -1,5 +1,5 @@
 <div class="content">
-  <h1 class="title-text"><%=h @page.title %></h1>
+  <h1 class="title-text"><%=h @page.title.gsub('+', ' ') %></h1>
 
   <%= wiki_page_info %>
   <%= wiki_page_actions %>
