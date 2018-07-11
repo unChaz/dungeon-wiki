@@ -7,7 +7,7 @@ class WikiPagesController < ApplicationController
   end
 
   def show_allowed?
-    current_user.content_creator? || current_user.admin?
+    true
   end
 
   def history_allowed?

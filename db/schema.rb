@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180710235542) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
     t.string   "data_content_type"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 20180710235542) do
     t.integer  "height"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-    t.index ["type"], name: "index_ckeditor_assets_on_type"
+    t.index ["type"], name: "index_ckeditor_assets_on_type", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,21 +44,21 @@ ActiveRecord::Schema.define(version: 20180710235542) do
     t.boolean  "admin"
     t.boolean  "content_creator"
     t.string   "name"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "wiki_page_versions", force: :cascade do |t|
-    t.integer  "page_id",                      null: false
+    t.integer  "page_id",    null: false
     t.integer  "updator_id"
     t.integer  "number"
     t.string   "comment"
     t.string   "path"
     t.string   "title"
-    t.text     "content",    limit: 268435456
+    t.text     "content"
     t.datetime "updated_at"
-    t.index ["page_id"], name: "index_wiki_page_versions_on_page_id"
-    t.index ["updator_id"], name: "index_wiki_page_versions_on_updator_id"
+    t.index ["page_id"], name: "index_wiki_page_versions_on_page_id", using: :btree
+    t.index ["updator_id"], name: "index_wiki_page_versions_on_updator_id", using: :btree
   end
 
   create_table "wiki_pages", force: :cascade do |t|
@@ -63,11 +66,11 @@ ActiveRecord::Schema.define(version: 20180710235542) do
     t.integer  "updator_id"
     t.string   "path"
     t.string   "title"
-    t.text     "content",    limit: 268435456
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["creator_id"], name: "index_wiki_pages_on_creator_id"
-    t.index ["path"], name: "index_wiki_pages_on_path", unique: true
+    t.index ["creator_id"], name: "index_wiki_pages_on_creator_id", using: :btree
+    t.index ["path"], name: "index_wiki_pages_on_path", unique: true, using: :btree
   end
 
 end
