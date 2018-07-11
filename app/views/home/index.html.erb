@@ -1,3 +1,19 @@
 <div class="splash-page">
-  <a class="btn btn-primary wiki-enter-btn" href="/wiki">Enter Wiki</a>
+  <div class="hompage-button-wrapper">
+    <a class="btn btn-primary wiki-enter-btn" href="/wiki">Enter Wiki</a>
+    <% if current_user %>
+      <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "btn btn-primary wiki-enter-btn") %>
+    <% end %>
+  </div>
+  <div class="text-center map-image">
+    <img src="<%= asset_path('splash-screen.png') %>"></img>
+  </div>
+  <h2 class="text-center title-text">Sword Coast Map</h2>
+  <p class="text-center default-text">(Nelanther Isles are the southern most cluster of islands)</p>
+  <div class="text-center map-image">
+    <a href="http://media.wizards.com/2015/images/dnd/resources/Sword-Coast-Map_HighRes.jpg" target="_new">
+      <img src="http://media.wizards.com/2015/images/dnd/resources/Sword-Coast-Map_LowRes.jpg"></img>
+    </a>
+  </div>
+  <map></map>
 </div>

@@ -20,22 +20,20 @@
   margin-bottom: 30px;
 }
 
-.wiki-enter-btn {
+.hompage-button-wrapper {
   position: absolute;
   right: 10px;
   top: 15px;
+}
+
+.wiki-enter-btn {
   font-size: 22px;
   font-family: 'Crete Round';
 }
 
 .splash-page {
-  background-image: url("<%= asset_path('splash-screen.png') %>");
-  min-height: calc(100vw * 0.56);
-  background-size: contain;
-  background-repeat: no-repeat;
   width: 100%;
-  margin-top: -35px;
-  background-color: $background-color;
+  background-color: $layout-background;
 }
 
 .alert {
@@ -52,4 +50,29 @@
   a {
     color: white;
   }
+}
+
+#faerunMap {
+  height: 600px;
+  width: 800px;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+.faerun-title {
+  position: absolute;
+  color: white;
+  right: 20px;
+  top: 0;
+  font-family: 'Crete Round';
+
+  @media(max-width: 600px) {
+    display: none;
+  }
+}
+
+.map-image {
+  margin-top: -35px;
+  margin-bottom: 30px;
+  width: 100%;
 }

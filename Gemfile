@@ -21,6 +21,7 @@ gem 'sprockets-traceur'
 gem 'devise'
 gem 'irwi', :git => 'git://github.com/alno/irwi.git'
 gem 'ckeditor'
+gem 'aws-sdk-s3'
 gem 'paperclip'
 gem 'RedCloth'
 

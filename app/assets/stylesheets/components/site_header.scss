@@ -2,6 +2,14 @@
   margin-top: 10px;
 }
 
+.title-text.white {
+  color: white;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .site-header {
   display: block;
   background-color: $background-color;
