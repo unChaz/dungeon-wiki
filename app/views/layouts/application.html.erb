@@ -15,12 +15,8 @@
   </head>
 
   <body>
-    <div class="site-header">
-      <div class="banner-container">
-        <a href="/"><h1 class="white title-text">Dungeon Wiki</h1></a>
-      </div>
-    </div>
-
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/menu' %>
     <div class="app-wrapper" ng-app="DungeonWiki">
       <% if notice %>
         <p class="alert alert-success"><%= notice %></p>

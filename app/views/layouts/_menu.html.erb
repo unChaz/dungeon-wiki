@@ -1,0 +1,8 @@
+<div class="hompage-button-wrapper">
+  <a class="btn btn-primary wiki-enter-btn" href="/wiki">Wiki</a>
+  <% if current_user %>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "btn btn-primary wiki-enter-btn") %>
+  <% else %>
+    <%= link_to('Login', new_user_session_path, class: "btn btn-primary wiki-enter-btn") %>
+  <% end %>
+</div>
