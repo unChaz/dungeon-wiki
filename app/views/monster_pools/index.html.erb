@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Monster Pools</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @monster_pools.each do |monster_pool| %>
+      <tr>
+        <td><%= link_to 'Show', monster_pool %></td>
+        <td><%= link_to 'Edit', edit_monster_pool_path(monster_pool) %></td>
+        <td><%= link_to 'Destroy', monster_pool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Monster Pool', new_monster_pool_path %>

@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :spells
+  resources :locations
+  resources :players
+  resources :monsters
+  resources :monster_pools
+  resources :campaigns
+  resources :encounters
   # Map
   get 'map' => 'map#index'
 

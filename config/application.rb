@@ -9,5 +9,7 @@ Bundler.require(*Rails.groups)
 module DungeonWiki
   class Application < Rails::Application
     Irwi.config.formatter = Irwi::Formatters::SimpleHtml.new
+    config.autoload_paths << Rails.root.join('lib')
+    config.autoload_paths << Rails.root.join('lib/notifier')
   end
 end

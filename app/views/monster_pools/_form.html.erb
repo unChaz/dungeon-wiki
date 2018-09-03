@@ -1,0 +1,17 @@
+<%= form_for(monster_pool) do |f| %>
+  <% if monster_pool.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(monster_pool.errors.count, "error") %> prohibited this monster_pool from being saved:</h2>
+
+      <ul>
+      <% monster_pool.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180710235542) do
+ActiveRecord::Schema.define(version: 20180903212648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "campaigns", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -26,6 +33,80 @@ ActiveRecord::Schema.define(version: 20180710235542) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.index ["type"], name: "index_ckeditor_assets_on_type", using: :btree
+  end
+
+  create_table "encounters", force: :cascade do |t|
+    t.integer  "location_id"
+    t.integer  "campaign_id"
+    t.string   "name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "campaign_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "monster_classes", force: :cascade do |t|
+    t.string   "name"
+    t.string   "foreign_key"
+    t.integer  "armor_class"
+    t.integer  "max_hit_points"
+    t.decimal  "challenge_rating"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "hit_dice"
+    t.string   "speed"
+    t.integer  "strength"
+    t.integer  "dexterity"
+    t.integer  "constitution"
+    t.integer  "intelligence"
+    t.integer  "wisdom"
+    t.integer  "charisma"
+    t.integer  "stealth"
+    t.string   "damage_vulnerabilities"
+    t.string   "damage_resistances"
+    t.string   "damage_immunities"
+    t.string   "condition_immunities"
+    t.string   "senses"
+    t.string   "languages"
+    t.text     "special_abilities",      default: [],              array: true
+    t.string   "url"
+  end
+
+  create_table "monster_pools", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "campaign_id"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "keys",              default: [],              array: true
+    t.integer  "monster_class_ids", default: [],              array: true
+  end
+
+  create_table "monsters", force: :cascade do |t|
+    t.integer  "encounter_id"
+    t.integer  "armor_class"
+    t.string   "monster_key"
+    t.string   "name"
+    t.integer  "initiative"
+    t.integer  "hit_points"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.integer  "campaign_id"
+    t.integer  "armor_class"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "spells", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
