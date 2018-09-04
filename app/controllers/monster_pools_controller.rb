@@ -1,4 +1,5 @@
 class MonsterPoolsController < ApplicationController
+  before_action :ensure_json_request
   before_action :set_monster_pool, only: [:show, :edit, :update, :destroy]
 
   # GET /monster_pools

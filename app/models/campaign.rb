@@ -12,7 +12,7 @@ class Campaign < ApplicationRecord
   end
 
   def players
-    Plyer.where(campaign_id: self.id)
+    Player.where(campaign_id: self.id)
   end
 
   def add_monster_pool(name)

@@ -12,6 +12,7 @@ class EncounterGenerator
     @minimum_encounter_xp = xp_threshold * 0.80
     @eligable_monsters = eligable_monsters
     @xp_hash = xp_hash
+    puts "XP Threshold: #{@xp_threshold}"
   end
 
   def generate_one

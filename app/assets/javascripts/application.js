@@ -22,3 +22,4 @@
 //= require main
 //= require_tree .
 //= require_tree ./components
+//= require_tree ./services

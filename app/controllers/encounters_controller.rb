@@ -1,4 +1,5 @@
 class EncountersController < ApplicationController
+  before_action :ensure_json_request
   before_action :set_encounter, only: [:show, :edit, :update, :destroy]
 
   # GET /encounters

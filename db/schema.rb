@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180904020637) do
+ActiveRecord::Schema.define(version: 20180904162859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,23 @@ ActiveRecord::Schema.define(version: 20180904020637) do
     t.text     "actions",                default: [],              array: true
     t.integer  "experience"
     t.float    "challenge_rating"
+    t.string   "category"
+    t.string   "size"
+    t.integer  "medicine"
+    t.integer  "religion"
+    t.integer  "persuasion"
+    t.integer  "insight"
+    t.integer  "deception"
+    t.integer  "arcana"
+    t.integer  "athletics"
+    t.integer  "acrobatics"
+    t.integer  "strength_save"
+    t.text     "reactions",              default: [],              array: true
+    t.integer  "survival"
+    t.integer  "investigation"
+    t.integer  "nature"
+    t.integer  "intimidation"
+    t.integer  "performance"
   end
 
   create_table "monster_pools", force: :cascade do |t|

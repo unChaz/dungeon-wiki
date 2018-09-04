@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    @title = 'Dungeon Wiki'
+    @title = 'Dungie'
     @current_user = current_user
   end
 

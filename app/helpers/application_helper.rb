@@ -1,8 +1,8 @@
 module ApplicationHelper
 
   def render_title
-    return "#{@title} - Dungeon Wiki" if defined?(@title)
-    "Dungeon Wiki"
+    return "#{@title} - Dungie" if defined?(@title)
+    "Dungie"
   end
 
 end

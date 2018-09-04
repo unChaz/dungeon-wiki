@@ -1,4 +1,5 @@
 class MonstersController < ApplicationController
+  before_action :ensure_json_request
   before_action :set_monster, only: [:show, :edit, :update, :destroy]
 
   # GET /monsters

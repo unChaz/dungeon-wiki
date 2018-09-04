@@ -1,4 +1,5 @@
 class SpellsController < ApplicationController
+  before_action :ensure_json_request
   before_action :set_spell, only: [:show, :edit, :update, :destroy]
 
   # GET /spells

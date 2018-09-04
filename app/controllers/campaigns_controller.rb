@@ -1,10 +1,12 @@
 class CampaignsController < ApplicationController
+  before_action :ensure_json_request
+  before_action :ensure_current_user
   before_action :set_campaign, only: [:show, :edit, :update, :destroy]
 
   # GET /campaigns
   # GET /campaigns.json
   def index
-    @campaigns = Campaign.all
+    @campaigns = Campaign.where(user_id: current_user.id) || []
   end
 
   # GET /campaigns/1
@@ -14,7 +16,7 @@ class CampaignsController < ApplicationController
 
   # GET /campaigns/new
   def new
-    @campaign = Campaign.new
+    @campaign = Campaign.new(user_id: current_user.id)
   end
 
   # GET /campaigns/1/edit
@@ -62,13 +64,13 @@ class CampaignsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_campaign
-      @campaign = Campaign.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_campaign
+    @campaign = Campaign.find_by(id: params[:id], user_id: current_user.id)
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def campaign_params
-      params.fetch(:campaign, {})
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def campaign_params
+    params.fetch(:campaign, {})
+  end
 end

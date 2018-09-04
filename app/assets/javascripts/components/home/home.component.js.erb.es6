@@ -2,16 +2,21 @@
   'use strict';
 
   class HomeCtrl {
-    constructor($window) {
+    constructor($window, CampaignApi) {
       this.$window = $window;
+      this.CampaignApi = CampaignApi;
     }
 
     $onInit() {
-
+      this.CampaignApi.index({}, (resp) => {
+        console.log(resp);
+      }, (err) => {
+        console.log(err);
+      });
     }
   }
 
-  HomeCtrl.$inject = ['$window'];
+  HomeCtrl.$inject = ['$window', 'CampaignApi'];
 
   angular
     .module('DungeonWiki')
