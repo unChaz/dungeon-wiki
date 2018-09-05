@@ -1,11 +1,11 @@
-<site-header></site-header>
-
 <div class="content">
-  <div clss="row content-row">
-    
-  </div>
-</div>
+  <campaign-selector select-campaign="$ctrl.selectCampaign(campaign)"
+                     campaigns="$ctrl.campaigns"
+                     ng-if="$ctrl.campaigns && !$ctrl.selectedCampaign">
+  </campaign-selector>
 
-<div class="footer">
-
+  <campaign-manager ng-if="$ctrl.selectedCampaign"
+                    campaign="$ctrl.selectedCampaign"
+                    choose-campaign="$ctrl.selectedCampaign = null">
+  </campaign-manager>
 </div>

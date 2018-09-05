@@ -1,7 +1,7 @@
 <div class="hompage-button-wrapper">
   <% if current_user %>
-    <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "btn btn-primary wiki-enter-btn") %>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "btn btn-primary menu-button") %>
   <% else %>
-    <%= link_to('Login', new_user_session_path, class: "btn btn-primary wiki-enter-btn") %>
+    <%= link_to('Login', new_user_session_path, class: "btn btn-primary menu-button") %>
   <% end %>
 </div>
