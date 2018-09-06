@@ -16,6 +16,7 @@
 //= require jquery/dist/jquery
 //= require jquery-ui/ui/jquery-ui
 //= require angular/angular
+//= require angular-bootstrap
 //= require angular-animate/angular-animate
 //= require angular-aria/angular-aria
 //= require angular-messages/angular-messages

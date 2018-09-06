@@ -23,7 +23,7 @@ class Api::CampaignsController < ApplicationController
 
   # POST /campaigns.json
   def create
-    @campaign = Campaign.new(campaign_params)
+    @campaign = Campaign.new(campaign_params.merge(user_id: current_user.id))
 
     respond_to do |format|
       if @campaign.save
@@ -61,6 +61,10 @@ class Api::CampaignsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def campaign_params
-    params.fetch(:campaign, {})
+    params.permit(:name)
+  end
+
+  def campaign_url campaign
+    api_campaign_url(campaign)
   end
 end

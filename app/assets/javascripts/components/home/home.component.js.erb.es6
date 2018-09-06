@@ -2,31 +2,13 @@
   'use strict';
 
   class HomeCtrl {
-    constructor($window, $timeout, CampaignApi, $mdSidenav) {
+    constructor($window, $timeout, $mdSidenav) {
       this.$window = $window;
       this.$timeout = $timeout;
-      this.CampaignApi = CampaignApi;
       this.$mdSidenav = $mdSidenav;
     }
 
     $onInit() {
-      this.getCampaigns();
-    }
-
-    getCampaigns() {
-      this.CampaignApi.index({}, (resp) => {
-        this.campaigns = resp;
-      }, (err) => {
-        this.campaigns = [];
-        this.error = err;
-        this.$timeout(() => {
-          this.error = null;
-        }, 5000);
-      });
-    }
-
-    selectCampaign(campaign) {
-      this.selectedCampaign = campaign;
     }
 
     toggleMenu() {
@@ -38,7 +20,7 @@
     }
   }
 
-  HomeCtrl.$inject = ['$window', '$timeout', 'CampaignApi', '$mdSidenav'];
+  HomeCtrl.$inject = ['$window', '$timeout', '$mdSidenav'];
 
   angular
     .module('Dungie')

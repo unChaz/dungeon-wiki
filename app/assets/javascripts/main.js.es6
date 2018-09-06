@@ -3,8 +3,13 @@
 
   angular
     .module('Dungie', ['ngMaterial', 'ngMessages', 'ngComponentRouter'])
+    .config([
+      '$httpProvider', ($httpProvider) => {
+        $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
+      }
+    ])
     .controller('ApplicationCtrl', ApplicationCtrl)
-    .config(function($mdThemingProvider) {
+    .config(($mdThemingProvider) => {
       $mdThemingProvider.theme('default')
         .primaryPalette('teal')
         .accentPalette('indigo');
@@ -17,8 +22,8 @@
       });
     });
 
-  ApplicationCtrl.$inject = ['$scope'];
-  function ApplicationCtrl() {
+    ApplicationCtrl.$inject = ['$scope'];
+    function ApplicationCtrl() {
 
-  }
+    }
 })();

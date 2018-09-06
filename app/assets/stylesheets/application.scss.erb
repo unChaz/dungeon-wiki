@@ -4,7 +4,7 @@
 @import "fonts";
 @import "buttons";
 @import "layout";
-
+@import "material_overrides";
 @import "components/home";
 @import "components/campaign_selector";
 @import "components/site_header";
@@ -17,12 +17,20 @@ html, body {
   margin: 0;
 }
 
+.page-title {
+  text-align: center;
+  h3 {
+    width: 100%;
+    margin: 0;
+  }
+}
+
 .content-wrapper {
   background-color: $layout-background;
   margin-top: 45px;
 }
 
-.clickable-text {
+.clickable {
   cursor: pointer;
 }
 
@@ -52,11 +60,4 @@ html, body {
   font-size: 32px;
   text-decoration: none;
   font-family: $title-font;
-}
-
-.page-title {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  text-align: center;
 }
