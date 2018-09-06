@@ -16,6 +16,11 @@
 //= require jquery/dist/jquery
 //= require jquery-ui/ui/jquery-ui
 //= require angular/angular
+//= require angular-animate/angular-animate
+//= require angular-aria/angular-aria
+//= require angular-messages/angular-messages
+//= require angular-material/angular-material
+//= require angular-component-router/angular_1_router
 //= require underscore/underscore
 //= require turbolinks
 //= require ckeditor/init

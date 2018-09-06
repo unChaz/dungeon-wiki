@@ -14,10 +14,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= render 'layouts/header' %>
-    <%= render 'layouts/menu' %>
-    <div class="app-wrapper" ng-app="DungeonWiki">
+  <body ng-controller="ApplicationCtrl">
+    <div class="app-wrapper" ng-app="Dungie">
       <% if notice %>
         <p class="alert alert-success"><%= notice %></p>
       <% end %>

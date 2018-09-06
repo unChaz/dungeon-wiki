@@ -1,4 +1,4 @@
-@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "angular-material/angular-material.scss";
 
 @import "colors";
 @import "fonts";
@@ -12,38 +12,18 @@
 
 @import "wiki.scss";
 
-.content {
-  max-width: 1440px;
-  min-height: 630px;
-  padding-left: 30px;
-  padding-right: 30px;
-  margin: auto;
-  margin-bottom: 30px;
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-.hompage-button-wrapper {
-  position: absolute;
-  right: 10px;
-  top: 15px;
-}
-
-.menu-button {
-  font-size: 22px;
-  font-family: 'Crete Round';
+.content-wrapper {
+  background-color: $layout-background;
+  margin-top: 45px;
 }
 
 .clickable-text {
   cursor: pointer;
-}
-
-.selected-menu-button {
-  background-color: white !important;
-  border-color: $blue;
-}
-
-.splash-page {
-  width: 100%;
-  background-color: $layout-background;
 }
 
 .alert {
@@ -62,41 +42,21 @@
   }
 }
 
-#faerunMap {
-  height: 600px;
-  width: 800px;
-  margin: auto;
-  margin-bottom: 100px;
-}
-
-.faerun-title {
-  position: absolute;
-  color: white;
-  right: 20px;
-  top: 0;
-  font-family: 'Crete Round';
-
-  @media(max-width: 600px) {
-    display: none;
-  }
-}
-
-.map-image {
-  margin-top: -35px;
-  margin-bottom: 30px;
-  width: 100%;
-}
-
-.subtitle-text {
-  margin-bottom: 40px;
-  margin-top: -10px;
-}
-
 .subtitle {
   font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
-.splash-screen {
-  width: 1024px;
-  margin: auto;
+.large-title {
+  font-size: 32px;
+  text-decoration: none;
+  font-family: $title-font;
+}
+
+.page-title {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
 }

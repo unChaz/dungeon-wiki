@@ -1,0 +1,63 @@
+<div ng-controller="ApplicationCtrl" layout="column" class="home-wrapper" ng-cloak>
+  <div class="menu-toggle" ng-click="$ctrl.toggleMenu()">
+    <i class="fa fa-bars"></i>
+  </div>
+  <section layout="row" flex>
+    <md-sidenav
+        class="md-sidenav-left"
+        md-component-id="left"
+        md-is-locked-open="$mdMedia('gt-md')"
+        md-whiteframe="4">
+
+      <md-toolbar class="md-theme-indigo">
+        <h1>
+          <div layout="column" class="title-column">
+            <div flex><a href="/" class="white title-text large-title">Dungie</a></div>
+            <div flex class="white primary-text subtitle">Encounter Manager</div>
+          </div>
+        </h1>
+      </md-toolbar>
+
+      <md-content layout-padding>
+        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+          <md-button class="md-primary md-hue-1">Random Encounter</md-button>
+        </section>
+        <section ng-if="$ctrl.currentUser" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+          <md-button class="md-primary md-hue-1">Campaigns</md-button>
+        </section>
+      </md-content>
+
+      <md-toolbar class="md-theme-indigo user-menu-actions">
+        <div class="md-toolbar-tools text-center">
+          <div layout="column" class="title-column">
+            <md-button ng-if="$ctrl.currentUser"
+                       flex class="md-accented md-hue-1 primary-text"
+                       href="/users/sign_out.html"
+                       data-method="delete">Sign Out</md-button>
+            <md-button ng-if="!$ctrl.currentUser"
+                       flex class="md-accented md-hue-1 primary-text"
+                       href="/users/sign_in.html">Log In</md-button>
+            <p ng-if="!$ctrl.currentUser"
+               flex class="register-text">Need an account? <a href="/users/sign_up.html">Register</a>
+             </p>
+          </div>
+        </div>
+      </md-toolbar>
+
+    </md-sidenav>
+
+    <md-content flex layout-padding class="content-wrapper">
+      <ng-outlet></ng-outlet>
+
+      <!-- <campaign-selector select-campaign="$ctrl.selectCampaign(campaign)"
+                         campaigns="$ctrl.campaigns"
+                         ng-if="$ctrl.campaigns && !$ctrl.selectedCampaign">
+      </campaign-selector>
+
+      <campaign-manager ng-if="$ctrl.selectedCampaign"
+                        campaign="$ctrl.selectedCampaign"
+                        choose-campaign="$ctrl.selectedCampaign = null"> -->
+      </campaign-manager>
+    </md-content>
+  </section>
+</div>

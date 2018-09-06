@@ -3,11 +3,11 @@ class ApplicationController < ActionController::Base
 
   def ensure_json_request
     return if request.format == :json
-    render :not_found => true, :status => 406
+    render :index
   end
 
   def ensure_current_user
     return if current_user.present?
-    render :not_found, :status => 404
+    redirect_to '/404.html'
   end
 end

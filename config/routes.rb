@@ -1,21 +1,17 @@
 Rails.application.routes.draw do
 
-  resources :spells
-  resources :locations
-  resources :players
-  resources :monsters
-  resources :monster_pools
-  resources :campaigns
-  resources :encounters
-  # Map
-  get 'map' => 'map#index'
+  namespace :api do
+    resources :spells
+    resources :locations
+    resources :players
+    resources :monsters
+    resources :monster_pools
+    resources :campaigns
+    resources :encounters
+  end
 
-  # Wiki
-  mount Ckeditor::Engine => '/ckeditor'
-  wiki_root '/wiki'
-
-  # Users
   devise_for :users, :controllers => { registrations: 'registrations' }
 
+  get '*path' => 'home#index'
   root to: 'home#index'
 end

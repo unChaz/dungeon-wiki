@@ -2,11 +2,23 @@
   'use strict';
 
   angular
-    .module('DungeonWiki', [])
-    .controller('ApplicationCtrl', ApplicationCtrl);
+    .module('Dungie', ['ngMaterial', 'ngMessages', 'ngComponentRouter'])
+    .controller('ApplicationCtrl', ApplicationCtrl)
+    .config(function($mdThemingProvider) {
+      $mdThemingProvider.theme('default')
+        .primaryPalette('teal')
+        .accentPalette('indigo');
+      })
+    .value('$routerRootComponent', 'home')
+    .config(($locationProvider) => {
+      $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+      });
+    });
 
-  ApplicationCtrl.$inject = ['$scope', '$rootScope', '$location'];
-  function ApplicationCtrl($scope, $rootScope, $location) {
-    $scope._ = _;
+  ApplicationCtrl.$inject = ['$scope'];
+  function ApplicationCtrl() {
+
   }
 })();

@@ -70,7 +70,7 @@
   }
 
   angular
-    .module('DungeonWiki')
+    .module('Dungie')
     .service('CampaignModel',
     class CampaignModel {
       model() {

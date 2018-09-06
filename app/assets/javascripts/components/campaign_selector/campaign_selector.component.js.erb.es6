@@ -17,7 +17,7 @@
   CampaignSelectorCtrl.$inject = [];
 
   angular
-    .module('DungeonWiki')
+    .module('Dungie')
     .component('campaignSelector', {
       templateUrl: '<%= asset_path "components/campaign_selector/campaign_selector.html" %>',
       controller: CampaignSelectorCtrl,

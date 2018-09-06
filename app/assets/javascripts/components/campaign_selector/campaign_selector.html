@@ -1,13 +1,16 @@
-<div clss="row content-row">
-  <h4 class="default-text">Campaigns</h4>
-  <div class="col-md-4" ng-repeat="campaign in $ctrl.campaigns">
-    <div class="campaign-card" ng-click="$ctrl.clickCampaign(campaign)">
-      <h4 class="title-text white">{{ campaign.name }}</h4>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="campaign-card campaign-placeholder" ng-click="$ctrl.createCampaign()">
-      <h1><i class="fa fa-plus green"></i></h1>
-    </div>
-  </div>
+<div class="page-title">
+  <h4 class="primary-text">Campaigns</h4>
 </div>
+
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile ng-repeat="campaign in $ctrl.campaigns">
+    <mat-card class="campaign-card" ng-click="$ctrl.clickCampaign(campaign)">
+      <h4 class="title-text">{{ campaign.name }}</h4>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="campaign-card" ng-click="$ctrl.createCampaign()">
+      <h1><i class="fa fa-plus green"></i></h1>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

@@ -12,9 +12,8 @@
 
     index(params, successCallback, errorCallback) {
       const deferred = this.$q.defer();
-      this.$http.get('/campaigns', { headers: this.headers, params })
-                .success(_handleResponse)
-                .error(_handleError);
+      this.$http.get('/api/campaigns', { headers: this.headers, params })
+          .then(_handleResponse, _handleError);
       return deferred.promise;
 
       function _handleResponse(resp) {
@@ -34,9 +33,8 @@
 
     create(params, successCallback, errorCallback) {
       const deferred = this.$q.defer();
-      this.$http.post('/campaigns', params, { headers: this.headers })
-                .success(_handleResponse)
-                .error(_handleError);
+      this.$http.post('/api/campaigns', params, { headers: this.headers })
+          .then(_handleResponse, _handleError);
       return deferred.promise;
 
       function _handleResponse(resp) {
@@ -56,9 +54,8 @@
 
     show(id, successCallback, errorCallback) {
       const deferred = this.$q.defer();
-      this.$http.get(`/campaigns/${id}`, { headers: this.headers })
-                .success(_handleResponse)
-                .error(_handleError);
+      this.$http.get(`/api/campaigns/${id}`, { headers: this.headers })
+          .then(_handleResponse, _handleError);
       return deferred.promise;
 
       function _handleResponse(resp) {
@@ -78,9 +75,8 @@
 
     update(id, params, successCallback, errorCallback) {
       const deferred = this.$q.defer();
-      this.$http.patch(`/campaigns/${id}`, params, { headers: this.headers })
-                .success(_handleResponse)
-                .error(_handleError);
+      this.$http.patch(`/api/campaigns/${id}`, params, { headers: this.headers })
+          .then(_handleResponse, _handleError);
       return deferred.promise;
 
       function _handleResponse(resp) {
@@ -100,9 +96,8 @@
 
     destroy(id, successCallback, errorCallback) {
       const deferred = this.$q.defer();
-      this.$http.delete(`/campaigns/${id}`, { headers: this.headers })
-                .success(_handleResponse)
-                .error(_handleError);
+      this.$http.delete(`/api/campaigns/${id}`, { headers: this.headers })
+          .then(_handleResponse, _handleError);
       return deferred.promise;
 
       function _handleResponse(resp) {
@@ -123,6 +118,6 @@
   CampaignApi.$inject = ['$q', '$http'];
 
   angular
-    .module('DungeonWiki')
+    .module('Dungie')
     .service('CampaignApi', CampaignApi);
 })();

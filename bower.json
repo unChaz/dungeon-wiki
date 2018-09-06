@@ -1,15 +1,17 @@
 {
   "name": "dungeon-wiki",
   "dependencies": {
-    "angular": "1.5.5",
-    "angular-animate": "1.5.5",
-    "angular-bootstrap": "2.5.0",
+    "angular": "1.7.2",
+    "angular-animate": "^1.7.3",
     "jquery": "2.1.1",
     "jquery-ui": "1.10.4",
     "jquery-ujs": "1.0.1",
-    "bootstrap-sass-official": "twbs/bootstrap-sass#3.3.7",
     "font-awesome": "4.5.0",
-    "underscore": "1.8.3"
+    "underscore": "1.8.3",
+    "angular-material": "^1.1.10",
+    "angular-aria": "^1.7.3",
+    "angular-messages": "^1.7.3",
+    "angular-component-router": "^0.2.1"
   },
   "resolutions": {
     "angular": "1.5.5",

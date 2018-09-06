@@ -18,7 +18,7 @@
   CampaignManagerCtrl.$inject = ['CampaignApi'];
 
   angular
-    .module('DungeonWiki')
+    .module('Dungie')
     .component('campaignManager', {
       templateUrl: '<%= asset_path "components/campaign_manager/campaign_manager.html" %>',
       controller: CampaignManagerCtrl,

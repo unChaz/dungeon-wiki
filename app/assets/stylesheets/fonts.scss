@@ -1,10 +1,11 @@
 @import url(//fonts.googleapis.com/css?family=Cinzel:300,400,500,600,700);
 @import url(//fonts.googleapis.com/css?family=Indie+Flower:300,400,500,600,700);
 @import url(//fonts.googleapis.com/css?family=Crete+Round:300,400,500,600,700);
+@import url(//fonts.googleapis.com/css?family=Ubuntu);
 
 $title-font: 'Cinzel', 'Helvetica', serif;
 $script-font: 'Indie Flower', cursive, serif;
-$primary-font: 'Crete', 'Times New Roman', serif;
+$primary-font: 'Ubuntu', 'Times New Roman', serif;
 
 .title-text {
   font-family: 'Cinzel';
@@ -14,6 +15,6 @@ $primary-font: 'Crete', 'Times New Roman', serif;
   font-family: 'Indie Flower', cursive;
 }
 
-.default-text {
-  font-family: 'Crete Round';
+.primary-text {
+  font-family: 'Ubuntu';
 }
