@@ -2,10 +2,10 @@
   <h3 class="primary-text">My Campaigns</h3>
 </md-content>
 <md-content class="md-padding" layout-xs="column" layout="row">
-  <div class="row">
-    <div class="col-md-4" ng-repeat="campaign in $ctrl.campaigns">
-      <md-card md-theme="default" md-theme-watch>
-        <md-card-title ng-click="$ctrl.openCampaign(campaign)">
+  <div class="row campaign-row">
+    <div class="col-md-4 col-sm-6" ng-repeat="campaign in $ctrl.campaigns">
+      <md-card md-theme="default" md-theme-watch class="campaign-card">
+        <md-card-title>
           <md-card-title-text>
             <h4 class="title-text campaign-card-name">{{ campaign.name }}</h4>
             <small>{{ campaign.players.length }} players, {{ campaign.locations.length }} locations.</small>
@@ -15,13 +15,14 @@
           </md-card-title-media>
         </md-card-title>
         <md-card-actions layout="row" layout-align="end center">
+          <md-button ng-click="$ctrl.openCampaign(campaign)">View</md-button>
           <md-button ng-click="$ctrl.showEdit($event, campaign)">Edit</md-button>
           <md-button ng-click="$ctrl.showDelete($event, campaign)">Delete</md-button>
         </md-card-actions>
       </md-card>
     </div>
-    <div class="col-md-4">
-      <md-card md-theme="default" md-theme-watch class="clickable" ng-click="$ctrl.showCreateCampaign()">
+    <div class="col-md-4 col-sm-6">
+      <md-card md-theme="default" md-theme-watch class="campaign-card clickable" ng-click="$ctrl.showCreateCampaign()">
         <md-card-title>
           <md-card-title-text>
             <h1 class="campaign-placeholder"><i class="fa fa-plus green"></i></h1>
